@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+
+type Grade = 'A' | 'B' | 'F';
 
 @Component({
   selector: 'app-control-flow',
@@ -8,11 +10,23 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     CommonModule,
   ],
   templateUrl: './control-flow.component.html',
-  styles: `
-    :host {
-      display: block;
-    }
-  `,
+  styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class ControlFlowComponent { }
+export default class ControlFlowComponent {
+
+    public showContent = signal(false)
+    public grade = signal<Grade>('B');
+
+    public frameworks = signal(['Angular', 'React', 'Vue', 'Svelte', 'Ember']);
+    public frameworks2 = signal(['Angular']);
+
+
+
+
+    public toggleContent(){
+      this.showContent.update(value => !value);
+    }
+
+
+ }
