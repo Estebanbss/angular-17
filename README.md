@@ -24,4 +24,6 @@ Este repositorio contiene un dashboard interactivo que he creado para probar las
 3. Iniciar el servidor de desarrollo con ng serve.
 4. Abrir el navegador web en http://localhost:4200.
 
+## Ver en vivo en GitHub Pages:
 
+https://estebanbss.github.io/angular-17
